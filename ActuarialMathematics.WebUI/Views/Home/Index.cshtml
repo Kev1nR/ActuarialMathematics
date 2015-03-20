@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Actuarial Mathematics - Home";
+}
+
+<div class="jumbotron">
+    <h1>Actuarial Mathematics</h1>
+    <p class="lead">
+        Actuarial Mathematics is a website used for demonstrating the use of ASP.Net MVC, Typescript, AngularJS and F#-based WebAPI
+        components. It exposes common actuarial mathematics taken from the book <a href="http://www.amazon.co.uk/Actuarial-Mathematics-Contingent-International-Science/dp/1107044073/ref=sr_1_1?s=books&ie=UTF8&qid=1426668000&sr=1-1&keywords=actuarial+mathematics">Actuarial Mathematics for Life Contingent Risks</a>
+        in a series of chapter based functions.
+    </p>
+    @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
+</div>
+
+<h2>Index</h2>
+
+<div class="col-md-4" ng-controller="SurvivalModels">
+    <h2>Getting started</h2>
+    <p>{{Title}}</p>
+    <p>{{Description}}</p>
+    <button ng-click="SimpleFn()">Cllick me</button>
+    <button ng-click="Gompertz_law = GompertzLaw(0.1, 20.0, 3)">Cllick me</button>
+    <p>The value from Gompertz law is {{Gompertz_law}}</p>
+</div>
