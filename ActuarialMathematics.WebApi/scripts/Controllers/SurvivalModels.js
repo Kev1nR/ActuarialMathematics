@@ -6,39 +6,35 @@ var actuarialMathematics = angular.module('actuarialMathematics', []);
 var SurvivalModels;
 (function (SurvivalModels) {
     var Controller = (function () {
-        function Controller($scope, $http, $rootScope) {
-            this.scope = $scope;
-            this.scope.Title = "Survival Models";
-            this.scope.Description = "The Survival Models controller exposes functions relating to Chapter 2 of the book";
-            this.scope.Results = [];
-            this.scope.SimpleFn = function () {
+        function Controller($scope, $http) {
+            $scope.Title = "Survival Models";
+            $scope.Description = "The Survival Models controller exposes functions relating to Chapter 2 of the book";
+            $scope.SimpleFn = function () {
                 $http.get('http://localhost:5000/api/SurvivalModels/MyTest').success(function (data) {
+
                     alert("Got data");
+                    for (var i = 0; i < data.length; i++)
+                    {
+                        var obje = data[i];
+                        alert("obj " + i.toString() + " " + obje.toString());
+                    }
+
                 }).error(function (data, status, headers, config) {
                     alert(data);
                     alert("an error: " + status.toString());
                     alert("an error: " + headers.toString());
                 });
             };
-            this.scope.GompertzLaw = function (B, c, x) {
-                var promise = $http.get('http://localhost:5000/api/SurvivalModels/Gompertz_law?B=0.1&c=1.05&x=60&precision=0.10').success(function (data) {
-                    var results = data;
-                    $scope.Results = results;
-                    //return results;
+            //function () { alert("Hello you - finally?"); }
+            $scope.GompertzLaw = function (B, c, x) {
+                $http.get('http://localhost:5000/api/SurvivalModels/Gompertz_law?B=0.1&c=20.0&x=60&precision=1.0').success(function (data) {
+                    alert("Got data" + data.toString());
                 }).error(function (data, status, headers, config) {
                     alert(data);
                     alert("an error: " + status.toString());
                     alert("an error: " + headers.toString());
                 });
-                //var results: Array<GompertzLawKVPair> = [
-                //    { Item1: 0, Item2: 0.123 },
-                //    { Item1: 1, Item2: 1.123 },
-                //    { Item1: 2, Item2: 2.123 },
-                //    { Item1: 3, Item2: 3.123 },
-                //    { Item1: 4, Item2: 4.123 }
-                //];
-                //return results;
-                return promise;
+                return B * c + x;
             };
         }
         return Controller;

@@ -1,7 +1,27 @@
-﻿<html ng-app="actuarialMathematicsApp">
+﻿<html>
 <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actuarial Mathematics</title>
-
+    <script src="./Scripts/jquery-1.10.2.min.js"></script>
+    <script src="./Scripts/bootstrap.js"></script>
+    <script src="./Scripts/modernizr-2.6.2.js"></script>
+    <script src="./Scripts/angular.js"></script>
+    <script src="./Scripts/Controllers/SurvivalModels.js"></script>
 </head>
+
+<body>
+    <div ng-app="actuarialMathematics">
+        <div ng-controller="SurvivalModels.Controller">
+            <h2>Getting started</h2>
+            <p>{{Title}}</p>
+            <p>{{Description}}</p>
+            <button ng-click="retval = SimpleFn()">Cllick me</button>
+            <p>MyTest returns : {{retval}}</p>
+            <button ng-click="Gompertz_law = GompertzLaw(0.1, 20.0, 3)">Cllick me</button>
+            <p>The value from Gompertz law is {{Gompertz_law}}</p>
+        </div>
+    </div>
+</body>
 
 </html>

@@ -13,5 +13,10 @@ namespace ActuarialMathematics.WebUI.Controllers
         {
             return View();
         }
+
+        public JsonResult MyTest()
+        {
+            return Json(true);
+        }
     }
 }
