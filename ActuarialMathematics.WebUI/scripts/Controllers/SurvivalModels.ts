@@ -1,11 +1,4 @@
-﻿/// <reference path="../typings/angularjs/angular.d.ts" />
-/// <reference path="../typings/angularjs/angular-route.d.ts" />
-/// <reference path="../typings/angularjs/angular-resource.d.ts" />
-
-'use strict';
-var actuarialMathematics =
-    angular.module(
-        'actuarialMathematics', []);
+﻿/// <reference path="startup.ts" />
 
 module SurvivalModels {
 
@@ -13,13 +6,14 @@ module SurvivalModels {
         Title: string;
         Description: string;
         SimpleFn: () => void;
-        Results: GompertzLawKVPair[];
+        GompertzLawResults: GompertzLawKVPair[];
+        GompertzLawChartData: any;
         GompertzLaw: (B: number, c: number, x: number) => Array<GompertzLawKVPair>;
     }
 
     interface GompertzLawKVPair {
-        Item1: number;
-        Item2: number;
+        t: number;
+        mortality: number;
     }
        
     export class Controller {
@@ -30,7 +24,8 @@ module SurvivalModels {
 
             this.scope.Title = "Survival Models";
             this.scope.Description = "The Survival Models controller exposes functions relating to Chapter 2 of the book";
-            this.scope.Results = [];
+            this.scope.GompertzLawResults = [];
+            this.scope.GompertzLawChartData = [];
 
             this.scope.SimpleFn = function () {
                 $http.get('http://localhost:5000/api/SurvivalModels/MyTest')
@@ -45,13 +40,23 @@ module SurvivalModels {
             } 
 
             this.scope.GompertzLaw = function (B, c, x) {
+                var url = 'http://localhost:5000/api/SurvivalModels/Gompertz_law?B=' + B +
+                    '&c=' + c + 
+                    '&x=' + x 
                 var promise =
-                    $http.get('http://localhost:5000/api/SurvivalModels/Gompertz_law?B=0.1&c=1.05&x=60&precision=0.10')
+                    $http.get(url)
                         .success(function (data) {
-                        var results: Array<GompertzLawKVPair> = data;
-                        $scope.Results = results;
+                        var chartdata = [];
+                        for (var i = 0; i < data.length; i++) {
+                            chartdata.push([data[i].t, data[i].mortality]);
+                        };      
+                            
+                        var results = [{ label: "Age 60", data: chartdata, points: { symbol: "circle", fillColor: "#058DC7" }, color: '#058DC7'}]
 
-                        //return results;
+
+                            //data;
+
+                        $scope.GompertzLawResults = data;
                     })
                         .error(function (data, status, headers, config) {
                         alert(data);
@@ -59,14 +64,6 @@ module SurvivalModels {
                         alert("an error: " + headers.toString());                        
                     });
 
-                //var results: Array<GompertzLawKVPair> = [
-                //    { Item1: 0, Item2: 0.123 },
-                //    { Item1: 1, Item2: 1.123 },
-                //    { Item1: 2, Item2: 2.123 },
-                //    { Item1: 3, Item2: 3.123 },
-                //    { Item1: 4, Item2: 4.123 }
-                //];
-                //return results;
                 return promise;
             }
         }

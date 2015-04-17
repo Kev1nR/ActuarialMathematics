@@ -4,14 +4,55 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
-    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
 
     <script src="~/scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/scripts/flot/jquery.flot.js"></script>
+    <script src="~/scripts/flot/jquery.flot.symbol.js"></script>
+    <script src="~/scripts/flot/jquery.flot.axislabels.js"></script>
     <script src="~/scripts/bootstrap.js"></script>
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/scripts/angular.js"></script>
-    <script src="~/scripts/Controllers/SurvivalModels.js"></script>
+    <script src="~/scripts/actuarialMathematics.js"></script>
+    <script type="text/javascript">
+        function gompertzChart(placeholder, data, options) {
+            $.plot($("#placeholder"), data, options);
+        };
+
+        $(document).ready(function () {
+            var options = {
+                series: {
+                    lines: { show: true },
+                    points: {
+                        radius: 3,
+                        show: true,
+                        fill: true
+                    }
+                },
+                yaxis: {
+                    axisLabel: 'Mortality',
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+                    axisLabelPadding: 5
+                },
+                xaxis: {
+                    min: 0,
+                    axisLabel: 'time',
+                    axisLabelUseCanvas: true,
+                    axisLabelFontSizePixels: 12,
+                    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
+                    axisLabelPadding: 5
+                },
+                grid: { hoverable: true },
+                legend: { labelBoxBorderColor: "none", position: "left" }
+            };
+
+            //$.plot($("#placeholder"), results, options);
+        });
+    </script>
 </head>
 <body ng-app="actuarialMathematics">
     <div class="navbar navbar-inverse navbar-fixed-top">

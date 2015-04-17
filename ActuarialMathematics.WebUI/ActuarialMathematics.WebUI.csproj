@@ -87,14 +87,47 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="scripts\actuarialMathematics.js" />
     <Content Include="scripts\angular-mocks.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="scripts\Controllers\SurvivalModels.js" />
-    <Content Include="scripts\Controllers\TestController.js" />
+    <Content Include="scripts\flot\excanvas.js" />
+    <Content Include="scripts\flot\excanvas.min.js" />
+    <Content Include="scripts\flot\jquery.colorhelpers.js" />
+    <Content Include="scripts\flot\jquery.colorhelpers.min.js" />
+    <Content Include="scripts\flot\jquery.flot.canvas.js" />
+    <Content Include="scripts\flot\jquery.flot.canvas.min.js" />
+    <Content Include="scripts\flot\jquery.flot.categories.js" />
+    <Content Include="scripts\flot\jquery.flot.categories.min.js" />
+    <Content Include="scripts\flot\jquery.flot.crosshair.js" />
+    <Content Include="scripts\flot\jquery.flot.crosshair.min.js" />
+    <Content Include="scripts\flot\jquery.flot.errorbars.js" />
+    <Content Include="scripts\flot\jquery.flot.errorbars.min.js" />
+    <Content Include="scripts\flot\jquery.flot.fillbetween.js" />
+    <Content Include="scripts\flot\jquery.flot.fillbetween.min.js" />
+    <Content Include="scripts\flot\jquery.flot.image.js" />
+    <Content Include="scripts\flot\jquery.flot.image.min.js" />
+    <Content Include="scripts\flot\jquery.flot.js" />
+    <Content Include="scripts\flot\jquery.flot.min.js" />
+    <Content Include="scripts\flot\jquery.flot.navigate.js" />
+    <Content Include="scripts\flot\jquery.flot.navigate.min.js" />
+    <Content Include="scripts\flot\jquery.flot.pie.js" />
+    <Content Include="scripts\flot\jquery.flot.pie.min.js" />
+    <Content Include="scripts\flot\jquery.flot.resize.js" />
+    <Content Include="scripts\flot\jquery.flot.resize.min.js" />
+    <Content Include="scripts\flot\jquery.flot.selection.js" />
+    <Content Include="scripts\flot\jquery.flot.selection.min.js" />
+    <Content Include="scripts\flot\jquery.flot.stack.js" />
+    <Content Include="scripts\flot\jquery.flot.stack.min.js" />
+    <Content Include="scripts\flot\jquery.flot.symbol.js" />
+    <Content Include="scripts\flot\jquery.flot.symbol.min.js" />
+    <Content Include="scripts\flot\jquery.flot.threshold.js" />
+    <Content Include="scripts\flot\jquery.flot.threshold.min.js" />
+    <Content Include="scripts\flot\jquery.flot.time.js" />
+    <Content Include="scripts\flot\jquery.flot.time.min.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
@@ -131,8 +164,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="scripts\Controllers\FlotChartDirective.ts" />
+    <TypeScriptCompile Include="scripts\Controllers\Some_Directives.ts" />
+    <TypeScriptCompile Include="scripts\Controllers\Startup.ts" />
     <TypeScriptCompile Include="scripts\Controllers\SurvivalModels.ts" />
-    <TypeScriptCompile Include="scripts\Controllers\TestCtrl.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-mocks.d.ts" />
@@ -140,6 +175,7 @@
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-route.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-sanitize.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\flot\jquery.flot.d.ts" />
     <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>
@@ -150,6 +186,9 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptOutFile>scripts\actuarialMathematics.js</TypeScriptOutFile>
+  </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
