@@ -31,16 +31,15 @@
         t: <input type="text" ng-model="t" />
     </p>
     <button say-hello="Fred">Click me</button>
-    <my-chart/>
     <button ng-click="GompertzLaw(B, c, x)">Click me</button>
-    <div ng-show="GompertzLawResults.length > 0">
+    
+    <div ng-show="GompertzLawResults.length > 0" style="float: left;">
         Value at {{t}} years after age {{x}} is {{GompertzLawResults[t].mortality | number : 6}}
         
         <p>
             t: <input type="text" ng-model="nextX" />
             <button ng-click="GompertzLaw(B, c, nextX)">Add age</button>
         </p>
-        <div id="placeholder"></div>
         <p>The values from Gompertz law are: </p>
         <table>
             <thead>
@@ -54,5 +53,6 @@
                 <td>{{ x.mortality | number : 6 }}</td>
             </tr>
         </table>
-    </div ng-show="GompertzLawResults.length > 0">
+    </div>
+    <div ng-show="GompertzLawResults.length > 0" style="float: right;"><my-chart chart-data="GompertzLawChartData" /></div>
 </div>

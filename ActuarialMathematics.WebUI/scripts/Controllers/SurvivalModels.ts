@@ -2,7 +2,7 @@
 
 module SurvivalModels {
 
-    interface SurvivalModelsScope extends ng.IScope {
+    export interface SurvivalModelsScope extends ng.IScope {
         Title: string;
         Description: string;
         SimpleFn: () => void;
@@ -54,7 +54,7 @@ module SurvivalModels {
                         var results = [{ label: "Age 60", data: chartdata, points: { symbol: "circle", fillColor: "#058DC7" }, color: '#058DC7'}]
 
 
-                            //data;
+                        $scope.GompertzLawChartData = results;
 
                         $scope.GompertzLawResults = data;
                     })
