@@ -14,7 +14,7 @@
 
 <h2>Index</h2>
 
-<div class="col-md-4" ng-controller="SurvivalModels.Controller">
+<div class="col-md-12" ng-controller="SurvivalModels.Controller">
     <h2>Getting started</h2>
     <p>{{Title}}</p>
     <p>{{Description}}</p>
@@ -41,7 +41,7 @@
             <button ng-click="GompertzLaw(B, c, nextX)">Add age</button>
         </p>
         <p>The values from Gompertz law are: </p>
-        <table>
+        @*<table>
             <thead>
                 <tr>
                     <td>t</td>
@@ -51,8 +51,8 @@
             <tr ng-repeat="x in GompertzLawResults">
                 <td>{{ x.t }}</td>
                 <td>{{ x.mortality | number : 6 }}</td>
-            </tr>
+            </tr>*@
         </table>
     </div>
-    <div ng-show="GompertzLawResults.length > 0" style="float: right;"><my-chart chart-data="GompertzLawChartData" /></div>
+    <div ng-show="GompertzLawResults.length > 0"><my-chart chart-data="GompertzLawChartData" /></div>
 </div>

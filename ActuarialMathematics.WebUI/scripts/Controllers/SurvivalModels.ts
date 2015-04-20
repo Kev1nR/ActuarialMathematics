@@ -18,10 +18,15 @@ module SurvivalModels {
        
     export class Controller {
         scope: SurvivalModelsScope;
-    
-        constructor($scope: SurvivalModelsScope, $http, $rootScope) {
-            this.scope = $scope;
+        colours: { [Age: string]: string };
 
+        constructor($scope: SurvivalModelsScope, $http) {
+            this.scope = $scope;
+            this.colours = {
+                "20": "Red",
+                "50": "Blue",
+                "80": "Green"
+            }; 
             this.scope.Title = "Survival Models";
             this.scope.Description = "The Survival Models controller exposes functions relating to Chapter 2 of the book";
             this.scope.GompertzLawResults = [];
@@ -46,14 +51,40 @@ module SurvivalModels {
                 var promise =
                     $http.get(url)
                         .success(function (data) {
-                        var chartdata = [];
-                        for (var i = 0; i < data.length; i++) {
-                            chartdata.push([data[i].t, data[i].mortality]);
+                        this.colours = {
+                            "20": "Red",
+                            "50": "Blue",
+                            "80": "Green",                      
+                        }; 
+                        this.colours[x.toString()] = "Black";
+                        
+                        var results = [];
+                        
+                        //{
+                        //    label: "Age " + data[0].age.toString(),
+                        //    data: [],
+                        //    points: { fillColor: this.colours[data[0].age.toString()] },
+                        //    color: this.colours[data[0].age.toString()]}];
+
+                        for (var i = 0; i < 2; i++) {
+                            var chartdata = [];
+                            for (var j = 0; j < data[i].GLData.length; j++) {
+                                chartdata.push([data[i].GLData[j].t, data[i].GLData[j].mortality]);
+                            }
+                            //var chartLine = [{
+                            //    label: "Age " + data[i].age.toString(),
+                            //    data: chartdata,
+                            //    points: {
+                            //        symbol: "circle",
+                            //        fillColor: this.colours[data[i].age.toString()]
+                            //    },
+                            //    color: this.colours[data[i].age.toString()]
+                            //}]
+                            
+                            results.push(chartdata);
+                            //results.push(chartLine);
                         };      
                             
-                        var results = [{ label: "Age 60", data: chartdata, points: { symbol: "circle", fillColor: "#058DC7" }, color: '#058DC7'}]
-
-
                         $scope.GompertzLawChartData = results;
 
                         $scope.GompertzLawResults = data;
