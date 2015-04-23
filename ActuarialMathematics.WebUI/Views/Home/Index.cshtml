@@ -12,14 +12,13 @@
     @*<p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>*@
 </div>
 
-<h2>Index</h2>
-
 <div class="col-md-12" ng-controller="SurvivalModels.Controller">
-    <h2>Getting started</h2>
-    <p>{{Title}}</p>
+    @*<div ng-show="GompertzLawResults.length > 0" style="border: 1px dotted blue">*@
+    <my-chart show="GompertzLawResults.length > 0" chart-data="GompertzLawChartData" />
+    <h2>{{Title}}</h2>
     <p>{{Description}}</p>
     <p>
-        B: <input type="text" ng-model="B"/>
+        B: <input type="text" ng-model="B" />
     </p>
     <p>
         c: <input type="text" ng-model="c" />
@@ -30,29 +29,12 @@
     <p>
         t: <input type="text" ng-model="t" />
     </p>
-    <button say-hello="Fred">Click me</button>
-    <button ng-click="GompertzLaw(B, c, x)">Click me</button>
-    
-    <div ng-show="GompertzLawResults.length > 0" style="float: left;">
+    <p>
+        <button ng-click="GompertzLaw(B, c, x)">Click me</button>
+    </p>
+
+    <p ng-show="GompertzLawResults.length > 0">
         Value at {{t}} years after age {{x}} is {{GompertzLawResults[t].mortality | number : 6}}
-        
-        <p>
-            t: <input type="text" ng-model="nextX" />
-            <button ng-click="GompertzLaw(B, c, nextX)">Add age</button>
-        </p>
-        <p>The values from Gompertz law are: </p>
-        @*<table>
-            <thead>
-                <tr>
-                    <td>t</td>
-                    <td>value</td>
-                </tr>
-            </thead>
-            <tr ng-repeat="x in GompertzLawResults">
-                <td>{{ x.t }}</td>
-                <td>{{ x.mortality | number : 6 }}</td>
-            </tr>*@
-        </table>
-    </div>
-    <div ng-show="GompertzLawResults.length > 0"><my-chart chart-data="GompertzLawChartData" /></div>
+    </p>
+
 </div>

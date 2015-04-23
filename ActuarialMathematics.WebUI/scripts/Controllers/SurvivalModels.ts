@@ -66,7 +66,7 @@ module SurvivalModels {
                         //    points: { fillColor: this.colours[data[0].age.toString()] },
                         //    color: this.colours[data[0].age.toString()]}];
 
-                        for (var i = 0; i < 2; i++) {
+                        for (var i = 0; i < data.length; i++) {
                             var chartdata = [];
                             for (var j = 0; j < data[i].GLData.length; j++) {
                                 chartdata.push([data[i].GLData[j].t, data[i].GLData[j].mortality]);
@@ -88,6 +88,13 @@ module SurvivalModels {
                         $scope.GompertzLawChartData = results;
 
                         $scope.GompertzLawResults = data;
+                        for (var i = 0; i < data.length; i++) {
+                            if (data[i].age.toString() === x)
+                            {
+                                $scope.GompertzLawResults = data[i].GLData;
+                                break;
+                            }
+                        }
                     })
                         .error(function (data, status, headers, config) {
                         alert(data);

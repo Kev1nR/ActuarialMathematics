@@ -16,43 +16,7 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="~/scripts/angular.js"></script>
     <script src="~/scripts/actuarialMathematics.js"></script>
-    <script type="text/javascript">
-        function gompertzChart(placeholder, data, options) {
-            $.plot($("#placeholder"), data, options);
-        };
-
-        $(document).ready(function () {
-            var options = {
-                series: {
-                    lines: { show: true },
-                    points: {
-                        radius: 3,
-                        show: true,
-                        fill: true
-                    }
-                },
-                yaxis: {
-                    axisLabel: 'Mortality',
-                    axisLabelUseCanvas: true,
-                    axisLabelFontSizePixels: 12,
-                    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-                    axisLabelPadding: 5
-                },
-                xaxis: {
-                    min: 0,
-                    axisLabel: 'time',
-                    axisLabelUseCanvas: true,
-                    axisLabelFontSizePixels: 12,
-                    axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-                    axisLabelPadding: 5
-                },
-                grid: { hoverable: true },
-                legend: { labelBoxBorderColor: "none", position: "left" }
-            };
-
-            //$.plot($("#placeholder"), results, options);
-        });
-    </script>
+ 
 </head>
 <body ng-app="actuarialMathematics">
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -77,8 +41,9 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
+        
+        <footer style="border: 1px dotted green">
+            <hr />
             <p>&copy; @DateTime.Now.Year - Actuarial Mathematics Application</p>
         </footer>
     </div>
