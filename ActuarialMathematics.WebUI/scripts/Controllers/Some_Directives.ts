@@ -32,13 +32,13 @@ module MyDirectives {
         return {
             restrict: 'E',
             replace: false,
-            template: '<div class=\'demo-container\'><div id=\'chart-placeholder\' class=\'demo-placeholder\'></div></div>',
+            template: '<div id=\'chart-placeholder\' class=\'demo-placeholder\'></div>',
             link: (scope: SurvivalModels.SurvivalModelsScope, element: JQuery, attributes) => {
                     var options = {
                         series: {
                             lines: { show: true },
                             points: {
-                                radius: 3,
+                                radius: 0.5,
                                 show: true,
                                 fill: true
                             }
@@ -48,15 +48,15 @@ module MyDirectives {
                             axisLabelUseCanvas: true,
                             axisLabelFontSizePixels: 12,
                             axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-                            axisLabelPadding: 5
+                            axisLabelPadding: -50
                         },
                         xaxis: {
                             min: 0,
-                            axisLabel: 'time',
+                            axisLabel: 'Years after age',
                             axisLabelUseCanvas: true,
                             axisLabelFontSizePixels: 12,
                             axisLabelFontFamily: 'Verdana, Arial, Helvetica, Tahoma, sans-serif',
-                            axisLabelPadding: 5
+                            axisLabelPadding: 20    
                         },
                         grid: { hoverable: true },
                         legend: { labelBoxBorderColor: "none", position: "left" }
