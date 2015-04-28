@@ -16,7 +16,6 @@ textarea {
     max-width: 280px;
 }
 
-
 .demo-container {
 	position: relative;
     float: right;
@@ -62,4 +61,11 @@ textarea {
     width: 400px;    
     height: 300px;
     
+}
+
+.text-numeric {
+    float: right;
+    width: 6.0em; 
+    text-align: right;
+    background-color:aliceblue;
 }

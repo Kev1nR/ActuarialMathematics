@@ -93,6 +93,7 @@
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\ActuarialMathematics.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\flot\excanvas.js" />
     <Content Include="scripts\flot\excanvas.min.js" />

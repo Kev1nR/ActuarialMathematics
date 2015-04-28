@@ -71,18 +71,14 @@ module SurvivalModels {
                             for (var j = 0; j < data[i].GLData.length; j++) {
                                 chartdata.push([data[i].GLData[j].t, data[i].GLData[j].mortality]);
                             }
-                            //var chartLine = [{
-                            //    label: "Age " + data[i].age.toString(),
-                            //    data: chartdata,
-                            //    points: {
-                            //        symbol: "circle",
-                            //        fillColor: this.colours[data[i].age.toString()]
-                            //    },
-                            //    color: this.colours[data[i].age.toString()]
-                            //}]
+                            var chartLine = {
+                                label: "Age " + data[i].age.toString(),
+                                data: chartdata,
+                                
+                                color: this.colours[data[i].age.toString()]
+                            };
                             
-                            results.push(chartdata);
-                            //results.push(chartLine);
+                            results.push(chartLine);
                         };      
                             
                         $scope.GompertzLawChartData = results;
