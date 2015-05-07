@@ -16,6 +16,7 @@
     <div class="col-md-6">
         <h2>{{Title}}</h2>
         <p>{{Description}}</p>
+
         <div class="col-md-4">
             <p>
                 <label>B:</label><input type="text" class="text-numeric" regex="(([0]\.[0-9]*)|(0)|([1-9]{1}[0-9]*\.?[0-9]*))" ng-model="B" />
@@ -31,11 +32,12 @@
         </div>
         <div style="clear: both;">
             <button ng-click="GompertzLaw(B, c, x)">Calculate</button>
+            @*<button say-hello="Xavier">Click</button>*@
         </div>
     </div>
     <div class="col-md-6">
         <div class="chart-container">
-            <my-chart chart-data="GompertzLawChartData" />
+            <gompertz-law-chart chart-data="GompertzLawChartData" />
         </div>
     </div>
 </div>

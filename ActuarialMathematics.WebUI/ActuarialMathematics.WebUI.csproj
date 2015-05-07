@@ -166,9 +166,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="scripts\Controllers\FlotChartDirective.ts" />
-    <TypeScriptCompile Include="scripts\Controllers\Some_Directives.ts" />
-    <TypeScriptCompile Include="scripts\Controllers\Startup.ts" />
+    <TypeScriptCompile Include="scripts\Directives\Charting.ts" />
+    <TypeScriptCompile Include="scripts\Directives\Utility.ts" />
+    <TypeScriptCompile Include="scripts\Startup.ts" />
     <TypeScriptCompile Include="scripts\Controllers\SurvivalModels.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="scripts\typings\angularjs\angular-cookies.d.ts" />
