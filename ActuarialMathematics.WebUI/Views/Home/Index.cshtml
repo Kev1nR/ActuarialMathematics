@@ -32,12 +32,11 @@
         </div>
         <div style="clear: both;">
             <button ng-click="GompertzLaw(B, c, x)">Calculate</button>
-            @*<button say-hello="Xavier">Click</button>*@
         </div>
     </div>
     <div class="col-md-6">
         <div class="chart-container">
-            <gompertz-law-chart chart-data="GompertzLawChartData" />
+            <line-chart chart-data="GompertzLawChartData" xaxis-title="Years after age" yaxis-title="Mortality"/>
         </div>
     </div>
 </div>
