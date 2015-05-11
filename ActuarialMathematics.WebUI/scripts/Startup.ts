@@ -5,6 +5,7 @@
 /// <reference path="controllers/survivalmodels.ts" />
 /// <reference path="directives/utility.ts" />
 /// <reference path="directives/charting.ts" />
+/// <reference path="directives/ui.ts" />
 
 module app {
     'use strict';
@@ -16,4 +17,5 @@ module app {
     
     actuarialMathematics.directive('lineChart', Charting.Directive.LineChart);
     actuarialMathematics.directive('regex', UtilityDirectives.regex);
+    actuarialMathematics.directive('metroPanelUi', UIComponents.MetroPanelUI);
 }

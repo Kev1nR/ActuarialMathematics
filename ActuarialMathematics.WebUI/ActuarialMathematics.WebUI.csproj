@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\Directives\Charting.ts" />
+    <TypeScriptCompile Include="scripts\Directives\UI.ts" />
     <TypeScriptCompile Include="scripts\Directives\Utility.ts" />
     <TypeScriptCompile Include="scripts\Startup.ts" />
     <TypeScriptCompile Include="scripts\Controllers\SurvivalModels.ts" />

@@ -69,3 +69,28 @@ textarea {
     text-align: right;
     background-color:aliceblue;
 }
+
+.metro-panel {
+    border: 1px solid darkgray;
+    width: 300px;
+    height: 300px;    
+    float: left;
+}
+
+.metro-panel.metro-panel-title {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight:700;
+    font-size:larger;
+    padding: 10px 0 0 0;
+    margin:0 10px 0 0;
+}
+
+.metro-panel.metro-panel-body {
+    height: 250px;
+    width: 300px;
+    text-align: left;
+    margin: 0 10px 10px 0;
+}
