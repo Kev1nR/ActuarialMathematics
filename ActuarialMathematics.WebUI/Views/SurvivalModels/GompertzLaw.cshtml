@@ -1,0 +1,28 @@
+﻿<h1>Gompertz Law</h1>
+<div class="col-md-6">
+    <h2>{{Title}}</h2>
+    <p>{{Description}}</p>
+
+    <div class="col-md-4">
+        <p>
+            <label>B:</label><input type="text" class="text-numeric" regex="(([0]\.[0-9]*)|(0)|([1-9]{1}[0-9]*\.?[0-9]*))" ng-model="B" />
+        </p>
+        <p>
+            <label>c:</label> <input type="text" class="text-numeric" regex="(([0]\.[0-9]*)|(0)|([1-9]{1}[0-9]*\.?[0-9]*))" ng-model="c" />
+
+        </p>
+        <p>
+            <label>x:</label> <input type="text" class="text-numeric" regex="(([1-9]{1}[0-9]*))" ng-model="x" />
+
+        </p>
+    </div>
+    <div style="clear: both;">
+        <button ng-click="GompertzLaw(B, c, x)">Calculate</button>
+        <label id="whereami"></label>
+    </div>
+</div>
+<div class="col-md-6">
+    <div class="chart-container">
+        <line-chart chart-data="GompertzLawChartData" xaxis-title="Years after age" yaxis-title="Mortality" />
+    </div>
+</div>

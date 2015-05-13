@@ -36,6 +36,10 @@ summary {
   display: block;
 }
 
+footer {
+    clear: both;
+}
+
 audio,
 canvas,
 video {

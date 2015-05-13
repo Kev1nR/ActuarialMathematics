@@ -6,22 +6,17 @@ using System.Web.Mvc;
 
 namespace ActuarialMathematics.WebUI.Controllers
 {
-    public class HomeController : Controller
+    public class SurvivalModelsController : Controller
     {
-        // GET: Home
+        // GET: SurvivalModels
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult ChapterMenu()
+        public ActionResult GompertzLaw()
         {
             return View();
-        }
-
-        public JsonResult MyTest()
-        {
-            return Json(true);
         }
     }
 }

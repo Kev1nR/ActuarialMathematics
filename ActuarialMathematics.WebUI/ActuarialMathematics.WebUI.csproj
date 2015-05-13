@@ -89,12 +89,17 @@
     <Content Include="Global.asax" />
     <Content Include="scripts\actuarialMathematics.js" />
     <Content Include="scripts\angular-mocks.js" />
+    <Content Include="scripts\angular-route.js" />
+    <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\ActuarialMathematics.pubxml" />
+    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\angular-route.min.js.map" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="scripts\ChapterMenu.html" />
     <Content Include="scripts\flot\excanvas.js" />
     <Content Include="scripts\flot\excanvas.min.js" />
     <Content Include="scripts\flot\jquery.colorhelpers.js" />
@@ -139,6 +144,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SurvivalModelsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,13 +153,14 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="scripts\angular.min.js.map" />
-    <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Views\Home\ChapterMenu.cshtml" />
+    <Content Include="Views\SurvivalModels\Index.cshtml" />
+    <Content Include="Views\SurvivalModels\GompertzLaw.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
