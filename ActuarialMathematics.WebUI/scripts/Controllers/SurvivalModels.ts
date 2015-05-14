@@ -61,12 +61,6 @@
 
                             var results = [];
                         
-                            //{
-                            //    label: "Age " + data[0].age.toString(),
-                            //    data: [],
-                            //    points: { fillColor: this.colours[data[0].age.toString()] },
-                            //    color: this.colours[data[0].age.toString()]}];
-
                             for (var i = 0; i < data.length; i++) {
                                 var chartdata = [];
                                 for (var j = 0; j < data[i].GLData.length; j++) {
@@ -100,6 +94,17 @@
 
                     return promise;
                 }
+            }
+        }
+
+        export class ChapterMenu {
+            scope: MenuItems.MenuItemScope;
+
+            constructor($scope: MenuItems.MenuItemScope) {
+                this.scope = $scope;
+                this.scope.MenuItems = new Array<MenuItems.MenuItem>();
+                this.scope.MenuItems.push(new MenuItems.MenuItemImpl("Gompertz' Law", "Gompertz' Law ...", "Pink", 'SurvivalModels/GompertzLaw'));
+                this.scope.MenuItems.push(new MenuItems.MenuItemImpl("Makeham's Law", "Makeham's Law ...", "Green", 'SurvivalModels/MakehamsLaw'));
             }
         }
     }

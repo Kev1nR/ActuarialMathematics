@@ -1,3 +1,4 @@
 ﻿<h1>Chapter Menu</h1>
-<metro-panel-ui panel-title="Hello there" colour="Pink">Some content</metro-panel-ui>
- 
+<div ng-repeat="item in MenuItems">
+    <metro-panel-ui panel-title={{item.Title}} url="#/{{item.Url}}" colour={{item.Colour}}>{{item.Template}}</metro-panel-ui>
+</div>

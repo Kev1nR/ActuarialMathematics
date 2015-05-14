@@ -13,8 +13,6 @@ module app {
     var actuarialMathematics = angular.module(
         'actuarialMathematics', ['ngRoute']);
 
-
-    actuarialMathematics.controller('SurvivalModels.Controller', SurvivalModels.Controller);
     actuarialMathematics.directive('sayHello', UtilityDirectives.SayHello);
 
     actuarialMathematics.directive('lineChart', Charting.Directive.LineChart);
@@ -25,12 +23,12 @@ module app {
         function routes($routeProvider: ng.route.IRouteProvider) {
             $routeProvider
                 .when('/', {
-                templateUrl: 'Home/ChapterMenu'
+                templateUrl: 'Home/ChapterMenu',
+                controller: MenuItems.ChapterMenu
             })
                 .when('/SurvivalModels', {
-                templateUrl: 'SurvivalModels/'
-                //,
-                //controller: 'actuarialMathematics.controllers.SurvivalModels.Controller'
+                templateUrl: 'SurvivalModels',
+                controller: SurvivalModels.ChapterMenu
             })
                 .when('/SurvivalModels/GompertzLaw', {
                 templateUrl: 'SurvivalModels/GompertzLaw',

@@ -47,11 +47,12 @@
                 scope: {
                     colour: '@',
                     panelTitle: '@',
+                    url: '@'
                 },
                 replace: false,
                 transclude: true,
                 template: '<div class="metro-panel">'
-                + '<div class="metro-panel metro-panel-title"> {{panelTitle}} </div>'
+                + '<div class="metro-panel metro-panel-title"><a href={{url}}> {{panelTitle}} </a></div>'
                 + '<div class="metro-panel metro-panel-body" ng-transclude> </div>'
                 + '</div>',
                 link: (

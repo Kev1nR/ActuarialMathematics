@@ -1,3 +1,6 @@
 ﻿<h1>Survival Models</h1>
-<metro-panel-ui panel-title="Gompertz Law" colour="Pink">Gomeprtz law description and parameter list.</metro-panel-ui>
+<div ng-repeat="item in MenuItems">
+    <metro-panel-ui panel-title={{item.Title}} url="#/{{item.Url}}" colour={{item.Colour}}>{{item.Template}}</metro-panel-ui>
+</div>
+
 

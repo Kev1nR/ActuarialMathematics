@@ -173,6 +173,7 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="scripts\Controllers\Menus.ts" />
     <TypeScriptCompile Include="scripts\Directives\Charting.ts" />
     <TypeScriptCompile Include="scripts\Directives\UI.ts" />
     <TypeScriptCompile Include="scripts\Directives\Utility.ts" />
