@@ -46,7 +46,7 @@
                 }
 
                 this.scope.GompertzLaw = function (B, c, x) {
-                    var url = 'http://localhost:5000/api/SurvivalModels/Gompertz_law?B=' + B +
+                    var url = 'http://actuarialmathematicsapi.cloudapp.net/SurvivalModels/Gompertz_law?B=' + B +
                         '&c=' + c +
                         '&x=' + x
                     var promise =

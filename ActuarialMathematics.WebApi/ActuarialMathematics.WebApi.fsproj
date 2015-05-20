@@ -111,6 +111,13 @@
     <Content Include="readme.txt" />
     <Compile Include="SurvivalModelsController.fs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActuarialMathematics.FunctionsLibrary\ActuarialMathematics.FunctionsLibrary.fsproj">
+      <Name>ActuarialMathematics.FunctionsLibrary</Name>
+      <Project>{e3a638a3-35f6-481a-80fb-615251b8dc00}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
   </PropertyGroup>
