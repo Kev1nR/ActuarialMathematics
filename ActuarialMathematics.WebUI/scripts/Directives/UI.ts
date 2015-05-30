@@ -80,6 +80,8 @@
                     var bodyPane = element.find(".metro-panel-body");
                     bodyPane.css("background-color", bodyColour);
                     bodyPane.css("height", cssadjust.GetNewHeight(85));
+
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub]); 
                 }
             }
         };

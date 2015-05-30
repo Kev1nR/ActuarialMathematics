@@ -2,10 +2,12 @@
 /// <reference path="typings/angularjs/angular-route.d.ts" />
 /// <reference path="typings/angularjs/angular-resource.d.ts" />
 /// <reference path="typings/jquery/jquery.d.ts" />
+/// <reference path="typings/mathjax/mathjax.d.ts" />
 /// <reference path="controllers/survivalmodels.ts" />
 /// <reference path="directives/utility.ts" />
 /// <reference path="directives/charting.ts" />
 /// <reference path="directives/ui.ts" />
+
 
 module app {
     'use strict';
@@ -18,7 +20,7 @@ module app {
     actuarialMathematics.directive('lineChart', Charting.Directive.LineChart);
     actuarialMathematics.directive('regex', UtilityDirectives.regex);
     actuarialMathematics.directive('metroPanelUi', UIComponents.MetroPanelUI);
-
+    
     actuarialMathematics.config(['$routeProvider',
         function routes($routeProvider: ng.route.IRouteProvider) {
             $routeProvider
@@ -39,5 +41,4 @@ module app {
             });
         }
     ]);
-
 }

@@ -34,7 +34,7 @@
             constructor($scope: MenuItemScope) {
                 this.scope = $scope;
                 this.scope.MenuItems = new Array<MenuItem>();
-                this.scope.MenuItems.push(new MenuItemImpl("Survival Models", "This is the Survival models chapter 2", "Pink", 'SurvivalModels'));
+                this.scope.MenuItems.push(new MenuItemImpl("Survival Models", "This is the Survival models chapter 2.", "Pink", 'SurvivalModels'));
                 this.scope.MenuItems.push(new MenuItemImpl("Annuities", "This is the Annuities chapter x", "Green", 'Annuities'));               
             }
         }

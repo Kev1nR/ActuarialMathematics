@@ -46,7 +46,7 @@
                 }
 
                 this.scope.GompertzLaw = function (B, c, x) {
-                    var url = 'http://actuarialmathematicsapi.cloudapp.net/SurvivalModels/Gompertz_law?B=' + B +
+                    var url = 'http://localhost:5000/api/SurvivalModels/Gompertz_law?B=' + B +
                         '&c=' + c +
                         '&x=' + x
                     var promise =
@@ -103,7 +103,7 @@
             constructor($scope: MenuItems.MenuItemScope) {
                 this.scope = $scope;
                 this.scope.MenuItems = new Array<MenuItems.MenuItem>();
-                this.scope.MenuItems.push(new MenuItems.MenuItemImpl("Gompertz' Law", "Gompertz' Law ...", "Pink", 'SurvivalModels/GompertzLaw'));
+                this.scope.MenuItems.push(new MenuItems.MenuItemImpl("Gompertz' Law", "Gompertz' Law ... $$ S_x(t) = exp \\left\\{ \\frac{-B}{\\log c} c^x (c^t - 1 ) \\right\\} $$", "Pink", 'SurvivalModels/GompertzLaw'));
                 this.scope.MenuItems.push(new MenuItems.MenuItemImpl("Makeham's Law", "Makeham's Law ...", "Green", 'SurvivalModels/MakehamsLaw'));
             }
         }
