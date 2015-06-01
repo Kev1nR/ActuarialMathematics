@@ -22,7 +22,9 @@
             colours: { [Age: string]: string };
 
             constructor($scope: SurvivalModelsScope, $http) {
+                var self = this;
                 this.scope = $scope;
+
                 this.colours = {
                     "20": "Red",
                     "50": "Blue",
@@ -52,12 +54,12 @@
                     var promise =
                         $http.get(url)
                             .success(function (data) {
-                            this.colours = {
+                            self.colours = {
                                 "20": "Red",
                                 "50": "Blue",
                                 "80": "Green",
                             };
-                            this.colours[x.toString()] = "Black";
+                            self.colours[x.toString()] = "Black";
 
                             var results = [];
                         
@@ -70,7 +72,7 @@
                                     label: "Age " + data[i].age.toString(),
                                     data: chartdata,
 
-                                    color: this.colours[data[i].age.toString()]
+                                    color: self.colours[data[i].age.toString()]
                                 };
 
                                 results.push(chartLine);
