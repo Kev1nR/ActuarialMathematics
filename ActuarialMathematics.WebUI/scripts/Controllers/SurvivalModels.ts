@@ -31,7 +31,7 @@
                     "80": "Green"
                 };
                 this.scope.Title = "Survival Models";
-                this.scope.Description = "The Survival Models controller exposes functions relating to Chapter 2 of the book";
+                this.scope.Description = "Survival Models use mathematical functions to model the future lifetime of individuals. Probabilites of death or survival are modelled and the force of mortality concept is introduced.The functions in this section relate to Chapter 2 of the book.";
                 this.scope.GompertzLawResults = [];
                 this.scope.GompertzLawChartData = [];
 
