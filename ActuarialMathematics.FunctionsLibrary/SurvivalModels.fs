@@ -3,9 +3,9 @@
 module SurvivalModels =
     open System
 
-    type gl_data = {t: int; mortality: float}
+    type survival_data = {t: int; mortality: float}
 
-    type gl_At_Age = {age: int; GLData: gl_data list}
+    type survival_At_Age = {age: int; SurvivalData: survival_data list}
 
     let gompertz_Result (B, c) x =
         let tolerance = 0.000001
@@ -23,6 +23,14 @@ module SurvivalModels =
 
     let Gompertz_law (b, c) x  =
         let gompertz = gompertz_Result (b, c)
+        
+        x :: [20; 50; 80] |> Set.ofList
+        |> Set.map (fun age -> {age = age; SurvivalData = (gompertz age)})
+        |> Set.toArray
+
+    let Makehams_law (A, B, c) x  =
+        let gompertz = gompertz_Result (B, c)
+        let makehamFactor = 
         
         x :: [20; 50; 80] |> Set.ofList
         |> Set.map (fun age -> {age = age; GLData = (gompertz age)})
